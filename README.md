@@ -9,7 +9,7 @@
     </a>
   </p>
   <p align="center">
-    <img src="" />
+    <img src="https://github.com/nivaldoandrade/desafio-fundamentos-react-native/blob/master/assetsReadme/GoMarketplace.png" />
   </p>
   </header>
 
