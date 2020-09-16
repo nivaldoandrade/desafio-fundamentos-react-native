@@ -15,7 +15,7 @@
 
  <main>
   <h1>Sobre</h1>
-  <p>GoMarketplace é uma feature de listagem de produtos com carrinho de compras</p>
+  <p>GoMarketplace é uma feature de listagem de produtos e carrinho de compras.</p>
 
   <h1>Emulador</h1>
   <p>Documentação de configuração do emulador android: <a href="https://react-native.rocketseat.dev/android/emulador">Emulador.</a></p>
