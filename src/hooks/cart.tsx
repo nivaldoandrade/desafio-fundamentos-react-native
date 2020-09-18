@@ -27,7 +27,7 @@ const CartContext = createContext<CartContext | null>(null);
 
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
-  // console.log(products);
+
   useEffect(() => {
     async function loadProducts(): Promise<void> {
       // TODO LOAD ITEMS FROM ASYNC STORAGE
@@ -46,23 +46,28 @@ const CartProvider: React.FC = ({ children }) => {
       // TODO ADD A NEW ITEM TO THE CART
 
       const productExists = products.find(item => item.id === product.id);
+      let updatedProducts: Product[] = [];
 
       if (productExists) {
-        const updateProducts = products.map(item =>
+        updatedProducts = products.map(item =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
 
-        setProducts(updateProducts);
+        setProducts(updatedProducts);
       } else {
-        setProducts(item => [...item, { ...product, quantity: 1 }]);
+        updatedProducts = [...products, { ...product, quantity: 1 }];
+        setProducts(updatedProducts);
       }
-
-      await AsyncStorage.setItem(
-        '@GoMarketplace:cart',
-        JSON.stringify(products),
-      );
+      try {
+        await AsyncStorage.setItem(
+          '@GoMarketplace:cart',
+          JSON.stringify(updatedProducts),
+        );
+      } catch (error) {
+        console.log(error);
+      }
     },
     [products],
   );
@@ -94,19 +99,19 @@ const CartProvider: React.FC = ({ children }) => {
     async id => {
       // TODO DECREMENTS A PRODUCT QUANTITY IN THE CART
       const productIndexRemove = products.findIndex(
-        item => item.id === id && item.quantity < 2,
+        item => item.id === id && item.quantity <= 1,
       );
 
       if (productIndexRemove >= 0) {
-        const newProducts = products.filter(
+        const removedProduct = products.filter(
           (item, index) => index !== productIndexRemove,
         );
 
-        setProducts(newProducts);
+        setProducts(removedProduct);
         try {
           await AsyncStorage.setItem(
             '@GoMarketplace:cart',
-            JSON.stringify(newProducts),
+            JSON.stringify(removedProduct),
           );
         } catch (error) {
           console.log(error);

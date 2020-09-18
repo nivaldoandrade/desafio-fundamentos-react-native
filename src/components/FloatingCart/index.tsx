@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { onChange } from 'react-native-reanimated';
 import {
   Container,
   CartPricing,
