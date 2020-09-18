@@ -9,22 +9,16 @@
     </a>
   </p>
   <p align="center">
-    <img src="" />
+    <img src="https://github.com/nivaldoandrade/desafio-fundamentos-react-native/blob/master/assetsReadme/GoMarketplace.png" />
   </p>
   </header>
 
  <main>
-   <p align="center">
-    <a href="#Sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#Instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#Layout">Layout</a>
-  </p>
-
   <h1>Sobre</h1>
-  <p>GoMarketplace é uma feature de listagem de produtos com carrinho de compras</p>
+  <p>GoMarketplace é uma feature de listagem de produtos e carrinho de compras.</p>
 
   <h1>Emulador</h1>
-  <p>Documentação configuração emulador android: <a href="https://react-native.rocketseat.dev/android/emulador">Emulador.</a></p>
+  <p>Documentação de configuração do emulador android: <a href="https://react-native.rocketseat.dev/android/emulador">Emulador.</a></p>
 
   <h1>Instalação</h1>
 
